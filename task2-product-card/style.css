@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f4f2ff;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif, sans-serif;
+    padding: 0;
+}
+.card{
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-image{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+.card-body{
+    padding: 20px;
+}
+
+.card-title{
+    font-size: 1.5rem;
+    margin: 0 0 8px;;
+    color: #2b2a5c;
+}
+.card-price{
+    font-size: 1.2rem;
+    color: #5a49d6;
+    margin: 0 0 16px;
+    font-weight: bold;
+}
+
+.card-button{
+    width: 100%;
+    display: inline-block;
+    padding: 12px;
+    border: none;
+    background: #7c6cf0;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
