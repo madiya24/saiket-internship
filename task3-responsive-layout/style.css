@@ -1,3 +1,12 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #dbeafe;
+  --page-bg: #f3f7ff;
+  --text: #1e3a5f;
+  --white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,8 +14,8 @@
 body {
   margin: 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: #f4f2ff;
-  color: #2b2a5c;
+  background: var(--page-bg);
+  color: var(--text);
 }
 
 .layout {
@@ -27,14 +36,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 14px 32px;
-  background: #ffffff;
-  border-bottom: 3px solid #7c6cf0;
+  background: var(--white);
+  border-bottom: 3px solid var(--primary);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #5a49d6;
+  color: var(--primary-dark);
   text-decoration: none;
 }
 
@@ -46,33 +55,33 @@ body {
 .nav a {
   padding: 8px 16px;
   border-radius: 8px;
-  color: #2b2a5c;
+  color: var(--text);
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav a:hover {
-  background: #ece9ff;
-  color: #5a49d6;
+  background: var(--primary-light);
+  color: var(--primary-dark);
 }
 
 .nav a.active {
-  background: #7c6cf0;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--white);
 }
 
 /* Sidebar */
 .sidebar {
   grid-area: sidebar;
-  background: #ece9ff;
+  background: var(--primary-light);
   padding: 24px;
 }
 
 .sidebar h2,
 .content h2 {
   margin-top: 0;
-  color: #5a49d6;
+  color: var(--primary-dark);
 }
 
 .sidebar ul {
@@ -86,7 +95,7 @@ body {
 }
 
 .sidebar a {
-  color: #5a49d6;
+  color: var(--primary-dark);
   text-decoration: none;
 }
 
@@ -97,7 +106,7 @@ body {
 /* Main content */
 .content {
   grid-area: content;
-  background: #ffffff;
+  background: var(--white);
   padding: 32px;
   line-height: 1.6;
 }
@@ -110,14 +119,14 @@ body {
 }
 
 .info-card {
-  background: #f4f2ff;
+  background: var(--page-bg);
   border-radius: 12px;
   padding: 16px;
 }
 
 .info-card h3 {
   margin: 0 0 8px;
-  color: #5a49d6;
+  color: var(--primary-dark);
 }
 
 .info-card p {
@@ -127,8 +136,8 @@ body {
 /* Footer */
 .footer {
   grid-area: footer;
-  background: #5a49d6;
-  color: #ffffff;
+  background: var(--primary-dark);
+  color: var(--white);
   text-align: center;
   padding: 16px;
 }
