@@ -7,33 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="layout">
-        <header>
-            <h1>My Responsive Layout</h1>
-        </header>
 
-        <aside class="sidebar">
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </aside>
+  <div class="layout">
 
-        <main class="content">
-            <h2>Welcome </h2>
-            <p>
-                This is the main content area. On a large screen, it sits next to the
-                sidebar. On a phone, everything stacks into a single column.
-            </p>
-            <p>Try resizing your browser window to see the layout change.</p>
-        </main>
+    <header class="header">
+      <a class="logo" href="#">MySite</a>
+      <nav class="nav">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
 
-        <footer class="footer">
-        <p>&copy; 2026 My Responsive Website.</p>
-        </footer>
-    </div>
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#">Web Design</a></li>
+        <li><a href="#">Coding Tips</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>Welcome to My Website</h2>
+      <p>
+        This is the main content area. On a large screen it sits next to the
+        sidebar. On a phone, everything stacks into a single column.
+      </p>
+
+      <div class="cards">
+        <article class="info-card">
+          <h3>Learn</h3>
+          <p>Step-by-step guides for beginners.</p>
+        </article>
+        <article class="info-card">
+          <h3>Build</h3>
+          <p>Practical projects to practise your skills.</p>
+        </article>
+        <article class="info-card">
+          <h3>Share</h3>
+          <p>Show your work and get feedback.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 MySite. All rights reserved.</p>
+    </footer>
+
+  </div>
+
 </body>
 </html>
