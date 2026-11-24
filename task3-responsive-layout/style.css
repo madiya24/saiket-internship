@@ -145,3 +145,43 @@ body {
 .footer p {
   margin: 0;
 }
+
+/* Tablets and phones */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+      "header"
+      "content"
+      "sidebar"
+      "footer";
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav a {
+    text-align: center;
+  }
+}
