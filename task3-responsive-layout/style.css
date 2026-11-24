@@ -117,7 +117,9 @@ body {
   gap: 16px;
   margin-top: 24px;
 }
-
+.layout > * {
+  min-width: 0;
+}
 .info-card {
   background: var(--page-bg);
   border-radius: 12px;
@@ -149,7 +151,7 @@ body {
 /* Tablets and phones */
 @media (max-width: 768px) {
   .layout {
-    grid-template-columns: 1fr;
+   grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr auto auto;
     grid-template-areas:
       "header"
@@ -183,5 +185,17 @@ body {
 
   .nav a {
     text-align: center;
+  }
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
