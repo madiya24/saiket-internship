@@ -1,0 +1,110 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #dbeafe;
+  --page-bg: #f3f7ff;
+  --text: #1e3a5f;
+  --error: #d94b4b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.quiz {
+  width: 100%;
+  max-width: 560px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+}
+
+h1 {
+  margin: 0 0 16px;
+  text-align: center;
+  color: var(--primary-dark);
+}
+
+h2 {
+  color: var(--primary-dark);
+}
+
+.progress {
+  margin: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.option {
+  padding: 12px 16px;
+  border: 2px solid var(--primary-light);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.option:hover {
+  background: var(--primary-light);
+}
+
+.option.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  font-weight: bold;
+}
+
+.message {
+  min-height: 1.4em;
+  margin: 0 0 12px;
+  color: var(--error);
+  font-weight: bold;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+.score {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
