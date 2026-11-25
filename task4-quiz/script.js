@@ -1,5 +1,5 @@
 // 1. The quiz data (10 questions)
-const questions = [
+const allquestions = [
   {
     question: "What does HTML stand for?",
     options: [
@@ -71,6 +71,19 @@ const questions = [
     answer: 1
   }
 ];
+
+// Shuffle helper: returns a new list in random order
+function shuffle(list) {
+  const copy = [...list];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// The list the quiz actually uses (starts in the original order)
+let questions = [...allQuestions];
 
 // 2. Messages shown after a correct answer
 const praise = [
@@ -207,6 +220,7 @@ function showResult() {
 function restart() {
   currentIndex = 0;
   score = 0;
+  questions = shuffle(allQuestions);
   resultBox.classList.add("hidden");
   quizBox.classList.remove("hidden");
   showQuestion();
