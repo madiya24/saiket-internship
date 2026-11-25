@@ -2,9 +2,13 @@
   --primary: #2563eb;
   --primary-dark: #1e40af;
   --primary-light: #dbeafe;
-  --page-bg: #f3f7ff;
+  --accent: #f59e0b;
+  --accent-light: #fef3c7;
   --text: #1e3a5f;
-  --error: #d94b4b;
+  --good: #1f8f63;
+  --good-light: #dcf5ea;
+  --bad: #d94b4b;
+  --bad-light: #fde4e4;
 }
 
 * {
@@ -18,18 +22,19 @@ body {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  background: var(--page-bg);
+  background: linear-gradient(135deg, #e0ecff, #fff4e0);
   color: var(--text);
   font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
 .quiz {
   width: 100%;
-  max-width: 560px;
+  max-width: 580px;
   background: #ffffff;
   border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
+  border-top: 6px solid var(--accent);
 }
 
 h1 {
@@ -42,10 +47,39 @@ h2 {
   color: var(--primary-dark);
 }
 
-.progress {
+.top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress,
+.live-score {
   margin: 0;
-  color: var(--primary);
   font-weight: bold;
+}
+
+.progress {
+  color: var(--primary);
+}
+
+.live-score {
+  color: #b86e00;
+}
+
+.bar {
+  height: 8px;
+  margin: 8px 0 4px;
+  background: var(--primary-light);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width 0.4s ease;
 }
 
 .options {
@@ -67,22 +101,37 @@ h2 {
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.option:hover {
+.option:hover:not(:disabled) {
   background: var(--primary-light);
+  border-color: var(--primary);
 }
 
-.option.selected {
-  border-color: var(--primary);
-  background: var(--primary-light);
+.option:disabled {
+  cursor: default;
+  opacity: 1;
+  color: var(--text);
+}
+
+.option.correct {
+  border-color: var(--good);
+  background: var(--good-light);
   font-weight: bold;
+}
+
+.option.wrong {
+  border-color: var(--bad);
+  background: var(--bad-light);
 }
 
 .message {
   min-height: 1.4em;
   margin: 0 0 12px;
-  color: var(--error);
   font-weight: bold;
 }
+
+.message.error { color: var(--bad); }
+.message.good  { color: var(--good); }
+.message.bad   { color: #b86e00; }
 
 .btn {
   width: 100%;
@@ -93,16 +142,38 @@ h2 {
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn.accent {
+  background: var(--accent);
+  color: var(--text);
+  font-weight: bold;
+}
+
+.btn.accent:hover {
+  background: #d98a00;
+}
+
+#result-box {
+  text-align: center;
 }
 
 .score {
-  font-size: 1.4rem;
-  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 8px 0;
+}
+
+.result-text {
+  margin: 0 0 20px;
+  line-height: 1.5;
 }
 
 .hidden {
