@@ -1,5 +1,5 @@
 // 1. The quiz data (10 questions)
-const allquestions = [
+const allQuestions = [
   {
     question: "What does HTML stand for?",
     options: [
